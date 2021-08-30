@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("kirankumarajith97/test4")
+       app = docker.build("sriramojuarun9/team6")
     }
 
     stage('Test image') {
@@ -22,7 +22,7 @@ node {
 
     stage('Push image') {
         
-        docker.withRegistry('https://registry.hub.docker.com', 'git') {
+        docker.withRegistry('https://registry.hub.docker.com', 'team') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
